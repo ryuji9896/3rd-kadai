@@ -66,5 +66,47 @@ print_r($weekly);
 
 #5-array-merge　「配列の最後の要素に1つまたは複数の配列を結合するときに使用する。」
 
-$array = [10,20,30];
-$account
+$array1 = [10,20,30];
+$array2 = [40,50];
+$array3 = [60,70];
+$account = "yes";
+if($account == "yes"){
+    $array=array_merge($array1,$array2);
+}else{
+    $array=array_merge($array1,$array3);
+}
+print_r($array) . "\n";
+
+#5-time,mktime:回答
+
+#5-time,mktime　「time関数:現在時刻のUNIXタイムスタンプを取得する。
+#                 mktime関数:指定した時刻のUNIXタイムスタンプを取得する。」
+#                 UNIXタイムスタンプは1970年1月1日午前0時0分からどれだけの時間が経過したかを示すもの。
+#time関数例
+date_default_timezone_set ('Asia/Tokyo');
+$time = time();
+$date = date('y/m/d H:i:s',$time);
+echo $date . "\n";
+
+#mktime関数例
+date_default_timezone_set ('Asia/Tokyo');
+$event_month = 12;
+$event_day1 = 15;
+$event_day2 = 18;
+$event_year = 2023;
+$X_day1 = mktime(0,0,0,$event_month,$event_day1,$event_year);
+$X_day2 = mktime(23,59,59,$event_month,$event_day2,$event_year);
+$today = time();
+
+if($today < $X_day1){
+    echo "1イベント期間外のため値引きはありません。" . "\n";
+}elseif($today <= $X_day2){
+     echo"2この商品はイベント中のため値引きされます。" . "\n";
+}else echo "3イベント期間外のため値引きはありません。" . "\n";
+
+#5-date:回答
+
+#5-date関数　「ローカルの日付や時刻を書式化する関数。日付表示にしたりするときに使用する」
+date_default_timezone_set('Asia/Tokyo');
+$today=time()+(7*60*60*24);
+echo "1週間後の" . date('Y年m月d日',$today) . "はクリスマスイヴ！";
