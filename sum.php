@@ -108,5 +108,5 @@ if($today < $X_day1){
 
 #5-date関数　「ローカルの日付や時刻を書式化する関数。日付表示にしたりするときに使用する」
 date_default_timezone_set('Asia/Tokyo');
-$today=time()+(7*60*60*24);
+$today=time()+(7*24*60*60);
 echo "1週間後の" . date('Y年m月d日',$today) . "はクリスマスイヴ！";
