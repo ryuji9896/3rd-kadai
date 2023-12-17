@@ -67,3 +67,4 @@ print_r($weekly);
 #5-array-merge　「配列の最後の要素に1つまたは複数の配列を結合するときに使用する。」
 
 $array = [10,20,30];
+$account
